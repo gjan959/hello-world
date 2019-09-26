@@ -1,0 +1,33 @@
+- salient point
+ - the test to do:
+	3 phases
+	- P1 - [Sync only]: FULL sync, progress sync-1way (p6 to steps only), progress-2way, manual (3 test: Group folder, TANO, Func Loc)
+		- FULL:
+			- UDF Sync
+			- Resources Sync
+			- Project Sync (EPS, Project, activity codes, activity values)
+			- WBS Sync (WBS Code, WBS value, task created, auto-relationship)
+			- Resource sync
+			- UDF values
+			- Progress sync
+				- 1-way
+				- 2-way
+			
+	- P2 - UI test only without any sync
+	- P3 - P1 + P2 full test including UI
+
+
+
+UAT - only on P1 and P2. P3 not needed
+
+Issue
+- Datetime resolved
+
+GTS
+SCAFFOLDER – CSE -change to short "-"
+
+BINA
+- some DUR-HRS (after synced to Primavera) not appeared if there is any row Null (in DUR-HRS)
+	- root cause = during the sync, the sync program mistakenly cast Int instead Decimal
+- At Primavera Start/Finish, there is "A"even though there is no activity started/finished
+- PlanFinish somehow being written as 1/1/1901 from IM
